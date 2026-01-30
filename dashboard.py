@@ -1,8 +1,7 @@
 import streamlit as st
 import cloudinary
 import cloudinary.api
-import cloudinary.search
-from cloudinary.search import Search
+from datetime import datetime
 
 from datetime import datetime
 import pandas as pd
@@ -228,3 +227,4 @@ for i, row in filtered_df.iterrows():
             <div class="meta"><b>Time:</b> {row['time'].strftime('%H:%M:%S')}</div>
         </div>
         """, unsafe_allow_html=True)
+
