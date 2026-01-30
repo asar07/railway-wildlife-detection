@@ -4,6 +4,16 @@ from datetime import datetime
 import pandas as pd
 import plotly.express as px
 
+cloudinary.config(
+    cloud_name=st.secrets["cloudinary"]["cloud_name"],
+    api_key=st.secrets["cloudinary"]["api_key"],
+    api_secret=st.secrets["cloudinary"]["api_secret"],
+)
+
+APP_USERNAME = st.secrets["auth"]["username"]
+APP_PASSWORD = st.secrets["auth"]["password"]
+
+
 st.set_page_config(
     page_title="Railway Wildlife Dashboard",
     layout="wide"
@@ -200,3 +210,4 @@ for i, r in enumerate(filtered):
             <div class="meta"><b>Time:</b> {r['time'].strftime('%H:%M:%S')}</div>
         </div>
         """, unsafe_allow_html=True)
+
